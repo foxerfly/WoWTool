@@ -115,7 +115,7 @@ class WoWConfig:
         self.download_list = list()
 
         # 加载所有插件
-        demofile = open('addon.dat', 'r', encoding='utf-8')
+        demofile = open('addon.dat', 'r', encoding='utf-8-sig')
         addon_all = json.load(demofile)
         demofile.close()
         log('load addon completed!')
@@ -222,11 +222,11 @@ if __name__ == '__main__':
     if command == 1:
         log('===============update addon db===============')
         try:
-            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) \
-                        AppleWebKit/537.36 (KHTML, like Gecko) \
+            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64)\
+                        AppleWebKit/537.36 (KHTML, like Gecko)\
                         Chrome/51.0.2704.63 Safari/537.36'}
-            url = 'https://addons-ecs.forgesvc.net/api/v2/addon/ \
-                   search?categoryId=0&gameId=1&gameVersionFlavor=wow_classic'
+            url = 'https://addons-ecs.forgesvc.net/api/v2/addon/\
+                search?categoryId=0&gameId=1&gameVersionFlavor=wow_classic'
             r = requests.get(url, headers=headers, timeout=30)
             # log(str(r.status_code))
             with open('addon.dat', 'wb') as demofile:

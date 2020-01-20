@@ -36,5 +36,6 @@
         "typescriptreact",
         "yaml",
         "yml"
-    ]
+    ],
+    "python.pythonPath": "C:\\udfprogram\\python\\Python38-64\\python.exe"
 }
